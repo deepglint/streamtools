@@ -1,62 +1,86 @@
 {
-	"ImportPath": "github.com/deepglint/streamtools/st/library",
-	"GoVersion": "go1.2.1",
+	"ImportPath": "github.com/deepglint/streamtools",
+	"GoVersion": "go1.4.2",
+	"Packages": [
+		"github.com/deepglint/streamtools/st"
+	],
 	"Deps": [
 		{
 			"ImportPath": "code.google.com/p/snappy-go/snappy",
-			"Comment": "null-15",
-			"Rev": "12e4b4183793ac4b061921e7980845e750679fd0"
+			"Comment": "null-20",
+			"Rev": "8850bd446ad6f18a271a08aae26bdf85bdf87c7f"
+		},
+		{
+			"ImportPath": "github.com/araddon/gou",
+			"Rev": "83835b52401515352c9234fecfa61e55aaab793b"
+		},
+		{
+			"ImportPath": "github.com/bitly/go-hostpool",
+			"Rev": "d0e59c22a56e8dadfed24f74f452cea5a52722d2"
 		},
 		{
 			"ImportPath": "github.com/bitly/go-nsq",
-			"Comment": "v0.3.7-77-gb2198ed",
-			"Rev": "b2198ed17a69d00832430a59f927f3499775b01c"
+			"Comment": "v1.0.3-25-gda20c0d",
+			"Rev": "da20c0d08a1a18a49af7b0f159b575c88436d37c"
 		},
 		{
 			"ImportPath": "github.com/bitly/go-simplejson",
-			"Comment": "v0.4.3-28-g3378bdc",
-			"Rev": "3378bdcb5cebedcbf8b5750edee28010f128fe24"
+			"Comment": "v0.4.3-30-g18db6e6",
+			"Rev": "18db6e68d8fd9cbf2e8ebe4c81a78b96fd9bf05a"
+		},
+		{
+			"ImportPath": "github.com/garyburd/redigo/internal",
+			"Rev": "535138d7bcd717d6531c701ef5933d98b1866257"
 		},
 		{
 			"ImportPath": "github.com/garyburd/redigo/redis",
-			"Rev": "8f6bca66c46849e514ac5abfc71ac9b063c01409"
+			"Rev": "535138d7bcd717d6531c701ef5933d98b1866257"
+		},
+		{
+			"ImportPath": "github.com/goamz/goamz/aws",
+			"Rev": "63291cb652bc024bcd52303631afad8f230b8244"
+		},
+		{
+			"ImportPath": "github.com/goamz/goamz/sqs",
+			"Rev": "63291cb652bc024bcd52303631afad8f230b8244"
 		},
 		{
 			"ImportPath": "github.com/gorilla/context",
-			"Rev": "a08edd30ad9e104612741163dc087a613829a23c"
+			"Rev": "215affda49addc4c8ef7e2534915df2c8c35c6cd"
 		},
 		{
 			"ImportPath": "github.com/gorilla/mux",
-			"Rev": "9ede152210fa25c1377d33e867cb828c19316445"
+			"Rev": "8096f47503459bcc74d1f4c487b7e6e42e5746b5"
 		},
 		{
 			"ImportPath": "github.com/gorilla/websocket",
-			"Rev": "03206ef31ebe44a6db9e66f3b466e05a31790631"
+			"Rev": "2dbddebb8266b93c5e6b119efb54e89043186f3f"
 		},
 		{
 			"ImportPath": "github.com/jasoncapehart/go-sgd",
 			"Rev": "a7e66bc0f279ada654e9a927ba1347ee8510585d"
 		},
 		{
-			"ImportPath": "github.com/mikedewar/aws4",
-			"Rev": "b90e57a1351df5db60fcdc35fbc1f25a410481a7"
+			"ImportPath": "github.com/mattbaird/elastigo/lib",
+			"Comment": "v1.0-153-g8ead27f",
+			"Rev": "8ead27fa065b3674a64c0db01a4314f0ca5f55f3"
 		},
 		{
 			"ImportPath": "github.com/mjibson/go-dsp/dsputils",
-			"Rev": "77c645803c98b47a8ec5ea9c425993ea9382a709"
+			"Rev": "1b9e25a19e16952f6c3a5b54601010a17498d9c0"
 		},
 		{
 			"ImportPath": "github.com/mjibson/go-dsp/fft",
-			"Rev": "77c645803c98b47a8ec5ea9c425993ea9382a709"
+			"Rev": "1b9e25a19e16952f6c3a5b54601010a17498d9c0"
 		},
 		{
 			"ImportPath": "github.com/mreiferson/go-snappystream",
-			"Comment": "v0.1.1",
-			"Rev": "97c96e6648e99c2ce4fe7d169aa3f7368204e04d"
+			"Comment": "v0.2.2-8-ga5260a3",
+			"Rev": "a5260a307b3e7dd583283c1e2717445244d506c7"
 		},
 		{
 			"ImportPath": "github.com/mxk/go-imap/imap",
-			"Rev": "727b31c5615d5f6a7ac1e32235fb93d14b62df3d"
+			"Rev": "c2feb2e3d66b9f7ed3f05fd19e677e9292a3d38d"
 		},
 		{
 			"ImportPath": "github.com/nutrun/lentil",
@@ -72,21 +96,20 @@
 		},
 		{
 			"ImportPath": "github.com/robertkrimen/otto",
-			"Rev": "6d506b4b2f09ce5646c0633ec8408dbc35521727"
+			"Rev": "d1b4d8ef0e0e4b088c8328c95ca63ab9ebd8fc9d"
 		},
 		{
 			"ImportPath": "github.com/streadway/amqp",
-			"Rev": "989f76903dbe3b7855b6e57e4048f87d03b5ac95"
+			"Rev": "6a378341a305bfbc252e8a6638f16cf443221997"
 		},
 		{
-			"ImportPath": "labix.org/v2/mgo",
-			"Comment": "274",
-			"Rev": "gustavo@niemeyer.net-20140312230639-09nxw5qqax6dlcqh"
+			"ImportPath": "github.com/vaughan0/go-ini",
+			"Rev": "a98ad7ee00ec53921f08832bc06ecf7fd600e6a1"
 		},
 		{
-			"ImportPath": "launchpad.net/gocheck",
-			"Comment": "87",
-			"Rev": "gustavo@niemeyer.net-20140127131816-zshobk1qqme626xw"
+			"ImportPath": "gopkg.in/mgo.v2",
+			"Comment": "r2015.01.24",
+			"Rev": "c6a7dce14133ccac2dcac3793f1d6e2ef048503a"
 		}
 	]
 }

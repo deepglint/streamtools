@@ -5,7 +5,7 @@ import (
 
 	"github.com/deepglint/streamtools/st/blocks" // blocks
 	"github.com/deepglint/streamtools/st/util"
-	"labix.org/v2/mgo"
+	"gopkg.in/mgo.v2"
 )
 
 // specify those channels we're going to use to communicate with streamtools
