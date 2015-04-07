@@ -1,6 +1,6 @@
 # Examples
 
-See the wiki for [instructions](https://github.com/nytlabs/streamtools/wiki/examples) on how to run these examples.
+See the wiki for [instructions](https://github.com/deepglint/streamtools/wiki/examples) on how to run these examples.
 
 ## use cases
 

@@ -1,5 +1,5 @@
 {
-	"ImportPath": "github.com/nytlabs/streamtools/st/library",
+	"ImportPath": "github.com/deepglint/streamtools/st/library",
 	"GoVersion": "go1.2.1",
 	"Deps": [
 		{

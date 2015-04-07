@@ -8,8 +8,8 @@ import (
 	"net/http"
 
 	"github.com/nytlabs/gojee"
-	"github.com/nytlabs/streamtools/st/blocks" // blocks
-	"github.com/nytlabs/streamtools/st/util"
+	"github.com/deepglint/streamtools/st/blocks" // blocks
+	"github.com/deepglint/streamtools/st/util"
 )
 
 func parseHeaders(headerRule map[string]interface{}) (map[string]string, error) {

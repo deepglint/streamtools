@@ -6,8 +6,8 @@ import (
 	"reflect"
 	"time"
 
-	"github.com/nytlabs/streamtools/st/blocks"
-	"github.com/nytlabs/streamtools/test_utils"
+	"github.com/deepglint/streamtools/st/blocks"
+	"github.com/deepglint/streamtools/test_utils"
 	. "launchpad.net/gocheck"
 )
 
@@ -25,7 +25,7 @@ func (s *FromHTTPStreamSuite) TestFromHTTPStreamXML(c *C) {
 		Channel: outChan,
 	}
 
-	ruleMsg := map[string]interface{}{"Endpoint": "https://raw.github.com/nytlabs/streamtools/master/examples/odf.xml"}
+	ruleMsg := map[string]interface{}{"Endpoint": "https://raw.github.com/deepglint/streamtools/master/examples/odf.xml"}
 	toRule := &blocks.Msg{Msg: ruleMsg, Route: "rule"}
 	ch.InChan <- toRule
 

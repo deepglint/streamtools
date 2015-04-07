@@ -4,8 +4,8 @@ import (
 	"encoding/json"
 
 	"github.com/bitly/go-nsq"
-	"github.com/nytlabs/streamtools/st/blocks"
-	"github.com/nytlabs/streamtools/st/util"
+	"github.com/deepglint/streamtools/st/blocks"
+	"github.com/deepglint/streamtools/st/util"
 )
 
 // TODO update NSQ https://github.com/bitly/go-nsq/pull/30

@@ -2,7 +2,7 @@ package blocks
 
 import (
 	"fmt"
-	"github.com/nytlabs/streamtools/st/loghub"
+	"github.com/deepglint/streamtools/st/loghub"
 	"net/url"
 	"strconv"
 	"time"

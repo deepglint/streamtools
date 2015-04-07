@@ -1,9 +1,9 @@
 package library
 
 import (
+	"github.com/deepglint/streamtools/st/blocks" // blocks
+	"github.com/deepglint/streamtools/st/util"
 	"github.com/nytlabs/gojee"
-	"github.com/nytlabs/streamtools/st/blocks" // blocks
-	"github.com/nytlabs/streamtools/st/util"
 )
 
 type Filter struct {

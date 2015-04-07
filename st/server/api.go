@@ -14,10 +14,10 @@ import (
 
 	"github.com/gorilla/mux"
 	"github.com/gorilla/websocket"
-	"github.com/nytlabs/streamtools/st/blocks"
-	"github.com/nytlabs/streamtools/st/library"
-	"github.com/nytlabs/streamtools/st/loghub"
-	"github.com/nytlabs/streamtools/st/util"
+	"github.com/deepglint/streamtools/st/blocks"
+	"github.com/deepglint/streamtools/st/library"
+	"github.com/deepglint/streamtools/st/loghub"
+	"github.com/deepglint/streamtools/st/util"
 )
 
 var logStream = hub{

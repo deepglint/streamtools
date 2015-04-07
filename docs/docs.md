@@ -7,7 +7,7 @@ You'll primarily interact with streamtools in the browser. However, since all fu
 ## Install
 ### Binary
 
-Download the appropriate version of the latest streamtools for your operating system from our [releases on github](https://github.com/nytlabs/streamtools/tags).
+Download the appropriate version of the latest streamtools for your operating system from our [releases on github](https://github.com/deepglint/streamtools/tags).
 
 Extract the archive (it'll either be a .tar.gz or .zip).
 
@@ -148,7 +148,7 @@ You should see data start to flow further down the pattern of blocks.
     * Rules:
         * `Filter`: [gojee](https://github.com/nytlabs/gojee) expression (`. != null`)
 
-* **unpack**. The unpack block takes an array of objects and emits each object as a separate message. See the [citibike example](https://github.com/nytlabs/streamtools/blob/master/examples/citibike.json#L77), where we unpack a big array of citibike stations into individual messages we can filter.  
+* **unpack**. The unpack block takes an array of objects and emits each object as a separate message. See the [citibike example](https://github.com/deepglint/streamtools/blob/master/examples/citibike.json#L77), where we unpack a big array of citibike stations into individual messages we can filter.  
     * Rules:
         * `Path`: [gojee](https://github.com/nytlabs/gojee) path
 

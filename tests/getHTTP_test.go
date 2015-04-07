@@ -5,8 +5,8 @@ import (
 	"reflect"
 	"time"
 
-	"github.com/nytlabs/streamtools/st/blocks"
-	"github.com/nytlabs/streamtools/test_utils"
+	"github.com/deepglint/streamtools/st/blocks"
+	"github.com/deepglint/streamtools/test_utils"
 	. "launchpad.net/gocheck"
 )
 
@@ -34,7 +34,7 @@ func (s *GetHTTPSuite) TestGetHTTP(c *C) {
 	})
 
 	time.AfterFunc(time.Duration(2)*time.Second, func() {
-		nsqMsg := map[string]interface{}{"url": "https://raw.github.com/nytlabs/streamtools/master/examples/citibike.json"}
+		nsqMsg := map[string]interface{}{"url": "https://raw.github.com/deepglint/streamtools/master/examples/citibike.json"}
 		postData := &blocks.Msg{Msg: nsqMsg, Route: "in"}
 		ch.InChan <- postData
 	})
@@ -81,7 +81,7 @@ func (s *GetHTTPSuite) TestGetHTTPXML(c *C) {
 	})
 
 	time.AfterFunc(time.Duration(2)*time.Second, func() {
-		xmlMsg := map[string]interface{}{"url": "https://raw.github.com/nytlabs/streamtools/master/examples/odf.xml"}
+		xmlMsg := map[string]interface{}{"url": "https://raw.github.com/deepglint/streamtools/master/examples/odf.xml"}
 		postData := &blocks.Msg{Msg: xmlMsg, Route: "in"}
 		ch.InChan <- postData
 	})

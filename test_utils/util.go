@@ -3,8 +3,8 @@ package test_utils
 import (
 	"log"
 
-	"github.com/nytlabs/streamtools/st/blocks"
-	"github.com/nytlabs/streamtools/st/library"
+	"github.com/deepglint/streamtools/st/blocks"
+	"github.com/deepglint/streamtools/st/library"
 )
 
 // this would be run once before EACH of the tests

@@ -3,7 +3,7 @@
 package library
 
 import (
-	"github.com/nytlabs/streamtools/st/blocks"
+	"github.com/deepglint/streamtools/st/blocks"
 )
 
 var Blocks = map[string]func() blocks.BlockInterface{

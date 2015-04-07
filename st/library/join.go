@@ -1,7 +1,7 @@
 package library
 
 import (
-	"github.com/nytlabs/streamtools/st/blocks" // blocks
+	"github.com/deepglint/streamtools/st/blocks" // blocks
 )
 
 type Join struct {

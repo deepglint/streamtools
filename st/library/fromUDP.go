@@ -5,8 +5,8 @@ import (
 	"net"
 	"sync"
 
-	"github.com/nytlabs/streamtools/st/blocks"
-	"github.com/nytlabs/streamtools/st/util"
+	"github.com/deepglint/streamtools/st/blocks"
+	"github.com/deepglint/streamtools/st/util"
 )
 
 const (

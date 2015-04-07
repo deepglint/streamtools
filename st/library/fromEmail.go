@@ -8,8 +8,8 @@ import (
 
 	"github.com/mxk/go-imap/imap"
 
-	"github.com/nytlabs/streamtools/st/blocks"
-	"github.com/nytlabs/streamtools/st/util"
+	"github.com/deepglint/streamtools/st/blocks"
+	"github.com/deepglint/streamtools/st/util"
 )
 
 // FromEmail holds channels we're going to use to communicate with streamtools,

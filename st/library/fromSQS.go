@@ -9,8 +9,8 @@ import (
 
 	"sync"
 
-	"github.com/nytlabs/streamtools/st/blocks" // blocks
-	"github.com/nytlabs/streamtools/st/util"
+	"github.com/deepglint/streamtools/st/blocks" // blocks
+	"github.com/deepglint/streamtools/st/util"
 )
 
 // lots of this code stolen brazenly from JP https://github.com/jprobinson

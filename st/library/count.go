@@ -4,8 +4,8 @@ import (
 	"container/heap"
 	"time"
 
-	"github.com/nytlabs/streamtools/st/blocks" // blocks
-	"github.com/nytlabs/streamtools/st/util"
+	"github.com/deepglint/streamtools/st/blocks" // blocks
+	"github.com/deepglint/streamtools/st/util"
 )
 
 type Count struct {

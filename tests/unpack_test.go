@@ -4,9 +4,9 @@ import (
 	"log"
 	"time"
 
-	"github.com/nytlabs/streamtools/st/blocks"
-	"github.com/nytlabs/streamtools/st/loghub"
-	"github.com/nytlabs/streamtools/test_utils"
+	"github.com/deepglint/streamtools/st/blocks"
+	"github.com/deepglint/streamtools/st/loghub"
+	"github.com/deepglint/streamtools/test_utils"
 	. "launchpad.net/gocheck"
 )
 

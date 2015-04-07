@@ -7,8 +7,8 @@ import (
 	"net/smtp"
 	"time"
 
-	"github.com/nytlabs/streamtools/st/blocks"
-	"github.com/nytlabs/streamtools/st/util"
+	"github.com/deepglint/streamtools/st/blocks"
+	"github.com/deepglint/streamtools/st/util"
 )
 
 // ToEmail holds channels we're going to use to communicate with streamtools,

@@ -2,10 +2,10 @@ package main
 
 import (
 	"flag"
-	"github.com/nytlabs/streamtools/st/library"
-	"github.com/nytlabs/streamtools/st/loghub"
-	"github.com/nytlabs/streamtools/st/server"
-	"github.com/nytlabs/streamtools/st/util"
+	"github.com/deepglint/streamtools/st/library"
+	"github.com/deepglint/streamtools/st/loghub"
+	"github.com/deepglint/streamtools/st/server"
+	"github.com/deepglint/streamtools/st/util"
 	"log"
 	"os"
 )

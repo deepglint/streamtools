@@ -4,8 +4,8 @@ import (
 	"errors"
 	"math/rand"
 
-	"github.com/nytlabs/streamtools/st/blocks" // blocks
-	"github.com/nytlabs/streamtools/st/util"   // util
+	"github.com/deepglint/streamtools/st/blocks" // blocks
+	"github.com/deepglint/streamtools/st/util"   // util
 )
 
 type Exponential struct {

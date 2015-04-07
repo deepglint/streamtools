@@ -4,8 +4,8 @@ import (
 	"encoding/json"
 
 	"github.com/bitly/go-nsq"
-	"github.com/nytlabs/streamtools/st/blocks" // blocks
-	"github.com/nytlabs/streamtools/st/util"
+	"github.com/deepglint/streamtools/st/blocks" // blocks
+	"github.com/deepglint/streamtools/st/util"
 )
 
 // specify those channels we're going to use to communicate with streamtools
