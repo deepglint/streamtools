@@ -2,13 +2,13 @@ package tests
 
 import (
 	"log"
-	"time"
 	"sort"
+	"time"
 
 	"github.com/deepglint/streamtools/st/blocks"
 	"github.com/deepglint/streamtools/st/loghub"
 	"github.com/deepglint/streamtools/test_utils"
-	. "launchpad.net/gocheck"
+	"gopkg.in/check.v1"
 )
 
 type CacheSuite struct{}

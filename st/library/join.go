@@ -8,8 +8,10 @@ type Join struct {
 	blocks.Block
 	inA   blocks.MsgChan
 	inB   blocks.MsgChan
+	inC   blocks.MsgChan
 	clear blocks.MsgChan
 	out   blocks.MsgChan
+	out1  blocks.MsgChan
 	quit  blocks.MsgChan
 }
 
@@ -22,9 +24,11 @@ func (b *Join) Setup() {
 	b.Desc = "joins two streams together, emitting the joined message once it's been seen on both inputs"
 	b.inA = b.InRoute("inA")
 	b.inB = b.InRoute("inB")
+	b.inC = b.InRoute("inC")
 	b.clear = b.InRoute("clear")
 	b.quit = b.Quit()
 	b.out = b.Broadcast()
+	b.out1 = b.Broadcast()
 }
 
 func (b *Join) Run() {

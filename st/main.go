@@ -31,6 +31,7 @@ func main() {
 	loghub.Start()
 
 	s := server.NewServer()
+	log.Println("open", flag.Args())
 
 	for _, file := range flag.Args() {
 		s.ImportFile(file)

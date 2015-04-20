@@ -37,6 +37,21 @@ func ParseString(ruleI interface{}, key string) (string, error) {
 	}
 	return val, nil
 }
+func ParseMap(ruleI interface{}, key string) (map[string]interface{}, error) {
+	rule := ruleI.(map[string]interface{})
+	val := make(map[string]interface{})
+	var ok bool
+
+	foundRule, ok := rule[key]
+	if !ok {
+		return val, errors.New("Key was not in rule")
+	}
+	val, ok = foundRule.(map[string]interface{})
+	if !ok {
+		return val, errors.New("Key was not a string")
+	}
+	return val, nil
+}
 
 func ParseRequiredString(ruleI interface{}, key string) (string, error) {
 	val, err := ParseString(ruleI, key)
