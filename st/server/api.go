@@ -12,12 +12,12 @@ import (
 	"runtime/pprof"
 	"time"
 
-	"github.com/gorilla/mux"
-	"github.com/gorilla/websocket"
 	"github.com/deepglint/streamtools/st/blocks"
 	"github.com/deepglint/streamtools/st/library"
 	"github.com/deepglint/streamtools/st/loghub"
 	"github.com/deepglint/streamtools/st/util"
+	"github.com/gorilla/mux"
+	"github.com/gorilla/websocket"
 )
 
 var logStream = hub{
@@ -156,6 +156,70 @@ func (s *Server) clearHandler(w http.ResponseWriter, r *http.Request) {
 	}
 
 	s.apiWrap(w, r, 200, s.response("OK"))
+}
+
+func (s *Server) Clear() {
+	s.manager.Mu.Lock()
+	defer s.manager.Mu.Unlock()
+
+	conns := s.manager.ListConnections()
+	for _, v := range conns {
+		id, err := s.manager.DeleteConnection(v.Id)
+		if err != nil {
+			loghub.Log <- &loghub.LogMsg{
+				Type: loghub.DELETE,
+				Data: err.Error(),
+				Id:   s.Id,
+			}
+		}
+
+		loghub.UI <- &loghub.LogMsg{
+			Type: loghub.DELETE,
+			Data: struct {
+				Id string
+			}{
+				id,
+			},
+			Id: s.Id,
+		}
+	}
+
+	blocks := s.manager.ListBlocks()
+	for _, v := range blocks {
+		ids, err := s.manager.DeleteBlock(v.Id)
+		if err != nil {
+			loghub.Log <- &loghub.LogMsg{
+				Type: loghub.DELETE,
+				Data: err.Error(),
+				Id:   s.Id,
+			}
+			continue
+		}
+
+		for _, id := range ids {
+			loghub.Log <- &loghub.LogMsg{
+				Type: loghub.DELETE,
+				Data: fmt.Sprintf("Block %s", id),
+				Id:   s.Id,
+			}
+
+			loghub.UI <- &loghub.LogMsg{
+				Type: loghub.DELETE,
+				Data: struct {
+					Id string
+				}{
+					id,
+				},
+				Id: s.Id,
+			}
+		}
+	}
+
+	loghub.Log <- &loghub.LogMsg{
+		Type: loghub.INFO,
+		Data: fmt.Sprintf("Go routines: %d", runtime.NumGoroutine()),
+		Id:   s.Id,
+	}
 }
 
 // serveLogStream handles websocket connections for the streamtools log.
@@ -489,7 +553,7 @@ func (s *Server) importJSON(body []byte) error {
 
 		loghub.Log <- &loghub.LogMsg{
 			Type: loghub.CREATE,
-			Data: fmt.Sprintf("Block %s", block.Id),
+			Data: fmt.Sprintf("Block %s, %s", block.Id, block.Type),
 			Id:   s.Id,
 		}
 	}
