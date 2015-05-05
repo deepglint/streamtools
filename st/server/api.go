@@ -588,6 +588,88 @@ func (s *Server) importJSON(body []byte) error {
 	return nil
 }
 
+type ExportedGraph struct {
+	Blocks      []*BlockInfo
+	Connections []*ConnectionInfo
+}
+
+func NewExportedGraph() *ExportedGraph {
+	return &ExportedGraph{
+		Blocks:      make([]*BlockInfo, 0),
+		Connections: make([]*ConnectionInfo, 0),
+	}
+}
+
+func (s *Server) ImportGraph(export ExportedGraph) error {
+	s.manager.Mu.Lock()
+	defer s.manager.Mu.Unlock()
+
+	corrected := make(map[string]string)
+
+	for _, block := range export.Blocks {
+		corrected[block.Id] = block.Id
+		for s.manager.IdExists(corrected[block.Id]) {
+			corrected[block.Id] = block.Id + "_" + s.manager.GetId()
+		}
+	}
+
+	for _, conn := range export.Connections {
+		corrected[conn.Id] = conn.Id
+		for s.manager.IdExists(corrected[conn.Id]) {
+			corrected[conn.Id] = conn.Id + "_" + s.manager.GetId()
+		}
+	}
+
+	for _, block := range export.Blocks {
+		block.Id = corrected[block.Id]
+		eblock, err := s.manager.Create(block)
+		if err != nil {
+			return err
+		}
+
+		loghub.UI <- &loghub.LogMsg{
+			Type: loghub.CREATE,
+			Data: eblock,
+			Id:   s.Id,
+		}
+
+		loghub.Log <- &loghub.LogMsg{
+			Type: loghub.CREATE,
+			Data: fmt.Sprintf("Block %s, %s", block.Id, block.Type),
+			Id:   s.Id,
+		}
+	}
+
+	for _, conn := range export.Connections {
+		conn.Id = corrected[conn.Id]
+		conn.FromId = corrected[conn.FromId]
+		conn.ToId = corrected[conn.ToId]
+		econn, err := s.manager.Connect(conn)
+		if err != nil {
+			return err
+		}
+
+		loghub.Log <- &loghub.LogMsg{
+			Type: loghub.CREATE,
+			Data: fmt.Sprintf("Connection %s", conn.Id),
+			Id:   s.Id,
+		}
+
+		loghub.UI <- &loghub.LogMsg{
+			Type: loghub.CREATE,
+			Data: econn,
+			Id:   s.Id,
+		}
+	}
+
+	loghub.Log <- &loghub.LogMsg{
+		Type: loghub.INFO,
+		Data: "Import OK",
+		Id:   s.Id,
+	}
+	return nil
+}
+
 // importHandler accepts a JSON through POST that updats the state of ST
 // It handles naming collisions by modifying the incoming block pattern.
 func (s *Server) importHandler(w http.ResponseWriter, r *http.Request) {
