@@ -1098,6 +1098,32 @@ func (s *Server) sendRouteHandler(w http.ResponseWriter, r *http.Request) {
 	s.apiWrap(w, r, 200, s.response("OK"))
 }
 
+// sendRouteHandler sends a message to a block's route. (unidirectional)
+func (s *Server) Send(id, route string, body []byte) {
+	s.manager.Mu.Lock()
+	defer s.manager.Mu.Unlock()
+
+	var msg interface{}
+
+	err := json.Unmarshal(body, &msg)
+	if err != nil {
+		msg = map[string]interface{}{
+			"data": string(body),
+		}
+	}
+	err = s.manager.Send(id, route, msg)
+
+	if err != nil {
+		return
+	}
+
+	loghub.Log <- &loghub.LogMsg{
+		Type: loghub.UPDATE,
+		Data: fmt.Sprintf("Block %s", id),
+		Id:   s.Id,
+	}
+}
+
 // queryRouteHandler queries a block and returns a msg. (bidirectional)
 func (s *Server) queryBlockHandler(w http.ResponseWriter, r *http.Request) {
 	s.manager.Mu.Lock()
