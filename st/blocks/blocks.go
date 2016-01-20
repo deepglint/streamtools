@@ -133,6 +133,12 @@ func (b *Block) InRoute(routeName string) MsgChan {
 	return route
 }
 
+func (b *Block) InRouteAndSize(routeName string, size int) MsgChan {
+	route := make(MsgChan, size)
+	b.inRoutes[routeName] = route
+	return route
+}
+
 func (b *Block) QueryRoute(routeName string) chan MsgChan {
 	route := make(chan MsgChan, 1000)
 	b.queryRoutes[routeName] = route
